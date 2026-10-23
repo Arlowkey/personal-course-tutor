@@ -1,39 +1,15 @@
-# 许可与权利范围
+# License
 
-## 采用的许可
+Personal Course Tutor — Arlowkey
 
-除另有明确说明外，项目发布者对本项目指令文本、说明文档及原创选择和编排中，**依法享有并有权许可的著作权及类似权利**，采用以下许可：
+The instruction text and documentation in this project are licensed under the
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+(CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/),
+to the extent that Arlowkey holds the applicable rights and authority to license them.
 
-**Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International（CC BY-NC-SA 4.0，署名—非商业性使用—相同方式共享 4.0 国际版）。**
+Noncommercial use, sharing, and adaptation are permitted under the license.
+When sharing, provide attribution and indicate changes. Shared adaptations must
+use the same license or a compatible license as permitted by its terms.
+Commercial use requires separate permission from the relevant rights holder.
 
-- [许可介绍（中文）](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans)
-- [完整法律条款](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
-
-本文件说明项目的许可适用范围，并通过上述链接采用标准许可；不修改 CC BY-NC-SA 4.0 的法律条款。许可条件、定义、例外、免责声明和终止规则以完整法律条款为准。
-
-## 署名
-
-项目名称：**个人课程导师 · Personal Course Tutor**。
-
-发布者署名：**Arlowkey**。
-
-分享本项目或其改编内容时，请按许可要求保留已提供的署名和许可声明、附许可链接，并标明修改；在合理可行时保留原仓库链接。
-
-## 许可条件摘要
-
-在上述权利范围内，可以为非商业目的复制、使用、修改和分享本项目材料。分享改编内容时，应遵守相同方式共享要求。
-
-商业性使用不在本许可的授权范围内；如需使用发布者有权许可的受保护内容，可以联系发布者另行取得授权。“非商业性”及其他条件按标准许可定义判断。本摘要不增加标准许可之外的限制。
-
-## AI 辅助说明及不受本许可限制的部分
-
-本项目依据 **Arlowkey** 提出的学习流程、具体要求及多轮修改反馈，使用 **OpenAI Codex 辅助生成、整理和迭代**。本文件不声称所有 AI 生成文字都当然享有著作权，也不把工具提供方列为本项目的共同作者或背书方。
-
-许可仅在适用法律认可相应权利、且发布者有权授权的范围内发生效力。以下内容不因本声明受到额外限制：
-
-- 通用学习方法、流程理念、事实和其他依法不受著作权保护的内容。
-- 适用法律下不满足保护条件的 AI 生成部分、公有领域材料，以及法定例外或限制所允许的使用。
-
-第三方材料及产品名称的权利不由本项目重新授权；如另有许可或权利声明，按其声明处理。仅因使用本 skill，不会自动将使用者独立提供的课件、个人笔记或独立生成的学习成果纳入本项目许可。
-
-本声明本身不能创设原本不存在的著作权，也不保证发布者对全部内容享有排他权利。已经依据标准许可合法取得的授权，不因发布者日后改变许可选择而自动撤销。
+[Full license terms](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en).

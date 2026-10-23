@@ -183,10 +183,8 @@ personal-course-tutor/
 
 ## 许可
 
-项目发布与署名：**Arlowkey**。
+本项目在 **Arlowkey** 有权授权的范围内，采用 **CC BY-NC-SA 4.0（署名—非商业性使用—相同方式共享 4.0 国际版）**。允许非商业使用、修改与分享；分享时须署名、标明修改，并按许可要求共享改编内容。商业使用需另行取得授权。
 
-本项目对发布者**依法享有并有权许可的著作权及类似权利**，采用 **CC BY-NC-SA 4.0（署名—非商业性使用—相同方式共享 4.0 国际版）**。适用范围和署名方式见 [LICENSE.md](LICENSE.md)，具体条件以 [标准许可完整法律条款](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) 为准。
+详见 [LICENSE.md](LICENSE.md) 和 [完整许可条款](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en)。
 
-在该权利范围内，允许非商业目的的使用、修改和分享；分享时保留许可要求的署名与声明、标明修改，改编内容按相同方式共享。商业性使用需另行获得相关权利人的授权。本项目以公开、非商业许可方式分享。
-
-本项目依据 **Arlowkey** 提出的学习流程、具体要求和多轮反馈，由 **OpenAI Codex 辅助生成和整理**。这不意味着全部 AI 生成内容都已获得著作权保护。通用学习方法、依法不受保护的内容、第三方材料及法定例外，不因本许可受到额外限制。
+制作：Arlowkey；使用 OpenAI Codex 辅助。
