@@ -3,9 +3,8 @@
 Personal Course Tutor — Arlowkey
 
 The instruction text and documentation in this project are licensed under the
-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
-(CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/),
-to the extent that Arlowkey holds the applicable rights and authority to license them.
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+(CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 Noncommercial use, sharing, and adaptation are permitted under the license.
 When sharing, provide attribution and indicate changes. Shared adaptations must

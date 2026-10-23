@@ -192,7 +192,7 @@ The repository contains the general-purpose skill and documentation. It does not
 
 ### License
 
-This project is licensed under **CC BY-NC-SA 4.0**, to the extent that **Arlowkey** has the rights and authority to license it. Noncommercial use, adaptation, and sharing are permitted under the license. When sharing, provide attribution, indicate changes, and follow the ShareAlike requirements for adaptations. Commercial use requires separate permission.
+This project is licensed under **CC BY-NC-SA 4.0**. Noncommercial use, adaptation, and sharing are permitted under the license. When sharing, provide attribution, indicate changes, and follow the ShareAlike requirements for adaptations. Commercial use requires separate permission.
 
 See [LICENSE.md](LICENSE.md) and the [full license terms](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en).
 
@@ -386,7 +386,7 @@ personal-course-tutor/
 
 ### 许可
 
-本项目在 **Arlowkey** 有权授权的范围内，采用 **CC BY-NC-SA 4.0（署名—非商业性使用—相同方式共享 4.0 国际版）**。允许非商业使用、修改与分享；分享时须署名、标明修改，并按许可要求共享改编内容。商业使用需另行取得授权。
+本项目采用 **CC BY-NC-SA 4.0（署名—非商业性使用—相同方式共享 4.0 国际版）**。允许非商业使用、修改与分享；分享时须署名、标明修改，并按许可要求共享改编内容。商业使用需另行取得授权。
 
 详见 [LICENSE.md](LICENSE.md) 和 [完整许可条款](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en)。
 
