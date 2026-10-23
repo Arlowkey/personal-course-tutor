@@ -196,7 +196,9 @@ This project is licensed under **CC BY-NC-SA 4.0**. Noncommercial use, adaptatio
 
 See [LICENSE.md](LICENSE.md) and the [full license terms](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en).
 
-Created by Arlowkey with assistance from OpenAI Codex.
+### Credits
+
+Created by Arlowkey. Portions of the content were written with assistance from AI tools.
 
 ---
 
@@ -390,4 +392,6 @@ personal-course-tutor/
 
 详见 [LICENSE.md](LICENSE.md) 和 [完整许可条款](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en)。
 
-制作：Arlowkey；使用 OpenAI Codex 辅助。
+### 制作说明
+
+制作：Arlowkey；部分内容使用 AI 工具辅助编写。
