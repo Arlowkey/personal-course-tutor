@@ -1,13 +1,216 @@
-# 个人课程导师 · Personal Course Tutor
+# Personal Course Tutor · 个人课程导师
+
+[English](#english) | [简体中文](#chinese)
+
+<a id="english"></a>
+
+## English
+
+### Overview
+
+Turn your lecture slides, exam scope, and past papers into a revision plan, then study through daily tutoring sessions that adapt to your actual progress.
+
+**Works with any course. Use it in a regular Codex chat.**
+
+Skill name: `personal-course-tutor`
+
+The tutor currently teaches primarily in Chinese and presents important terms as “Chinese (English).”
+
+### What it does
+
+The complete workflow is:
+
+**Provide Sources → “学习计划” (Study Plan) chat → Clarify missing information → Draft a plan → You confirm → Day1 chat → You confirm the start → Study → Confirm the actual stopping point → Adjust the remaining plan → Save personal study notes.**
+
+- **Build a revision plan:** Review slides, exam requirements, and past papers; account for your exam date, daily availability, current knowledge, and goals. Ask about missing essentials, such as daily study time, before finalizing the plan.
+- **Build the big picture first:** Explain the main themes, divide the material into modules, and show how the modules connect.
+- **Teach in slide order:** Work through pages or natural modules in manageable batches, explain important figures, and discuss the problems a concept solves. Add examples, analogies, and limits where useful.
+- **Explain in Chinese with English terminology:** Introduce key concepts in “Chinese (English)” format and adjust the depth to your background.
+- **Support practice and questions:** Usually give you a chance to attempt a problem before offering feedback and hints. Provide a complete explanation when you explicitly request one.
+- **Keep progress accurate:** At the end of a session, confirm the page or concept actually reached, exercise status, and unfinished work, then update the existing plan and records.
+- **Create personal study notes:** Summarize your goals, current understanding, a few essential concepts, difficulties, and the next starting point in the first person. Include key formulas when needed and keep the notes concise.
+
+### Requirements
+
+This is an instruction-based Codex skill containing workflow rules and reference documents. It has no installation scripts or executable programs.
+
+| Feature | Required capability |
+|---|---|
+| Read the skill, plan revision, and tutor | A Codex environment that supports local skills |
+| Read slides, scanned papers, figures, and formulas | Suitable file-reading tools; PDF and presentation tools as needed |
+| Save plans, notes, and progress | Read/write access to the course project |
+| Rename, create, and open DayX chats automatically | Available Codex chat-management tools and your authorization to use the full workflow |
+
+If chat-management tools are unavailable, the tutor explains how to create or open `Day1` manually. Planning and tutoring can still continue. If files cannot be saved, the tutor provides a reusable handoff record in the chat.
+
+A “Day1 chat” is another chat in the same course project; opening a separate operating-system window is not guaranteed.
+
+### Installation
+
+#### Option 1: Ask Codex to install it
+
+1. Download or clone this repository. If downloaded as a ZIP, extract it and name the skill folder `personal-course-tutor`.
+2. Reference that folder in a local Codex chat, or provide its actual path.
+3. Send:
+
+   > Install this personal-course-tutor folder in a user skill directory that this Codex environment can discover. Preserve the complete directory structure. If a skill with the same name already exists, tell me first. Install it only; do not start a course workflow. After installation, check whether I can invoke $personal-course-tutor.
+
+4. Grant write access to the skill directory if your environment requests it.
+
+#### Option 2: Install manually
+
+Copy the complete `personal-course-tutor` folder into a skill directory your Codex environment discovers. The current official user-level location is `$HOME/.agents/skills`:
+
+```text
+~/.agents/skills/personal-course-tutor/SKILL.md
+```
+
+On Windows, the user home directory can be represented by `%USERPROFILE%`:
+
+```text
+%USERPROFILE%\.agents\skills\personal-course-tutor\SKILL.md
+```
+
+If your environment already discovers skills in `$CODEX_HOME/skills`, commonly `~/.codex/skills`, use the location recognized by that environment. Install in one location to avoid duplicate skill names.
+
+Keep `SKILL.md` directly inside `personal-course-tutor`, alongside `agents` and `references`. Avoid an extra nested folder with the same name.
+
+Codex normally detects skill changes automatically; restart it if the skill does not appear. See the [official skill discovery documentation](https://learn.chatgpt.com/docs/build-skills).
+
+### First use
+
+#### 1. Create a course project and prepare materials
+
+Use one project per course. Store materials where chats in that project can read them.
+
+Useful materials include:
+
+- Lecture slides, textbook excerpts, and class notes.
+- The exam date, scope, format, and instructor announcements.
+- Past papers, assignments, official answers, and marking schemes.
+- Any formula sheet or reference materials confirmed to be available in the exam.
+
+You may call the materials folder `Sources` or keep its existing name. You do not need every type of material before starting. Use clear file and chapter names.
+
+#### 2. Request the complete workflow
+
+In a new chat in the course project, reference the materials and send:
+
+> Use the complete $personal-course-tutor workflow. Rename this chat to “学习计划” (Study Plan). Create a revision plan from my course materials, and ask me first if essentials such as daily study time are missing. After I confirm the plan, create and open a “Day1” chat in the same project. Ask whether I am ready to start, and wait for my confirmation before teaching. When I end the session, confirm my actual stopping point and exercise status, then adjust the remaining plan.
+
+If known, include your exam date, daily availability, unavailable dates, current progress, and goals. The tutor asks about missing essentials.
+
+After setup, follow the tutor’s prompts. You do not need to repeat the full request every day.
+
+#### 3. Confirm the plan
+
+Review the daily workload, slide ranges, exercises, and time estimates.
+
+- To accept: “Confirm this plan and prepare Day1 using the full workflow.”
+- To revise: “I only have one hour per day. Adjust the plan first; do not prepare Day1 yet.”
+
+The tutor saves the confirmed plan before creating or reusing Day1. **Confirming the plan and confirming the start of teaching are separate steps.**
+
+#### 4. Start Day1
+
+The Day1 chat first introduces the day’s goals and materials and asks whether to begin. After you confirm, it proceeds with:
+
+1. An overview of the day’s knowledge and how it fits together.
+2. Page-by-page or module-by-module teaching in the slides’ natural order.
+3. Relevant examples, important figures, and practice feedback.
+
+Ask the tutor to slow down, break down a step, or use a different example whenever needed. You can also ask to skip material you already understand.
+
+If Day1 must be created manually, open a new chat in the same project, name it `Day1`, and send:
+
+> Use $personal-course-tutor. Read this project’s confirmed study plan, daily tasks, and latest progress to prepare Day1. Introduce today’s goals and ask whether I am ready to begin.
+
+#### 5. End the session and save the handoff
+
+When you want to stop, say:
+
+> That is enough for Day1.
+
+The tutor stops introducing new material and asks about any missing details of your actual stopping point and exercise status. Describe a page, concept, or partial page accurately.
+
+For example, replace the following with your real progress:
+
+> I reached page 12 of Chapter2.pdf. I have not finished the worked example independently. I attempted exercise 2 but needed hints. Leave the remaining material for next time.
+
+The tutor records your actual progress, adjusts later tasks, and identifies the next starting point. Ending a session does not automatically mark all tasks complete; reading a solution does not count as independent success.
+
+It then creates and saves “DayX｜我的学习笔记” (My Study Notes), with five sections:
+
+1. **My learning goals:** What I wanted to understand and learn to solve.
+2. **What I understand now:** My current understanding and what still needs practice or verification.
+3. **Core concepts from this session:** A few essential concepts, their meanings, uses, and necessary connections. Include key formulas and conditions when needed; omit introductory background and unnecessary extensions.
+4. **My difficulties and common mistakes:** Actual questions, misconceptions, helpful explanations, and unresolved issues.
+5. **Where to resume next time:** The specific file, page, or concept to continue from and any exercises to retry first.
+
+Notes reflect your real answers and work. The tutor updates an existing note for that day when available, or creates one when needed. If the stopping point still needs confirmation, it waits. If it can only deliver notes in the chat, it says they have not been saved to a file.
+
+Next time, you can say:
+
+> Use the updated plan to prepare and open the Day2 chat. Ask whether I am ready to begin before teaching.
+
+Day numbers identify study units; calendar dates are recorded separately. Crossing midnight or reaching the next date does not automatically complete the previous day.
+
+### Where plans and records are stored
+
+Each course keeps its materials, plan, and progress in its own project. The skill contains the method. Existing project files retain their names and paths and are updated in place.
+
+One possible structure is shown below; you do not need to rename existing files to match it:
+
+```text
+Course project/
+├── Sources/
+├── AGENTS.md
+├── Study plan.md
+├── Daily tasks.md
+├── Progress.md
+└── Study notes/
+```
+
+Daily chats use these current files to continue from the right place. Attachments in one ordinary chat may not be accessible in another, so keep slides and papers in a shared, readable location within the project.
+
+### Repository contents
+
+```text
+personal-course-tutor/
+├── README.md                    This guide
+├── LICENSE.md                   License and attribution
+├── SKILL.md                     Skill entry point and shared rules
+├── agents/
+│   └── openai.yaml              Display name, description, and default prompt
+└── references/
+    ├── planning.md             Revision planning
+    ├── teaching.md             Daily tutoring and study notes
+    └── session-flow.md         Chat confirmations, creation, and handoff
+```
+
+The repository contains the general-purpose skill and documentation. It does not include the publisher’s slides, exam papers, chat history, account configuration, or learning progress. Use your own course materials after installation.
+
+### License
+
+This project is licensed under **CC BY-NC-SA 4.0**, to the extent that **Arlowkey** has the rights and authority to license it. Noncommercial use, adaptation, and sharing are permitted under the license. When sharing, provide attribution, indicate changes, and follow the ShareAlike requirements for adaptations. Commercial use requires separate permission.
+
+See [LICENSE.md](LICENSE.md) and the [full license terms](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en).
+
+Created by Arlowkey with assistance from OpenAI Codex.
+
+---
+
+<a id="chinese"></a>
+
+## 简体中文
 
 把课件、考试范围和历年试卷交给 Codex，让它先帮你制定复习计划，再按照每天的任务辅导学习，并根据真实进度调整之后的安排。
 
 **适用于任意课程。普通对话模式即可使用。**
 
 技能名称：`personal-course-tutor`  
-分享包整理日期：2026-10-24
 
-## 能做什么
+### 能做什么
 
 完整流程是：
 
@@ -21,7 +224,7 @@
 - **持续衔接进度**：收尾时核对实际学到的页码或知识点、练习情况和未完成项，再更新原有计划与记录。
 - **整理我的学习笔记**：收尾后自动以第一人称整理学习目标、当前理解、少量核心概念、卡点与易错提醒，以及下次学习起点。关键公式按需列出，内容简洁。
 
-## 使用环境
+### 使用环境
 
 这是一个供 Codex 读取的指令型 skill，文件夹中包含技能规则和参考流程，没有安装脚本或可执行程序。
 
@@ -36,11 +239,11 @@
 
 “Day1 聊天”指同一课程项目内的新聊天，不承诺自动打开单独的系统窗口。
 
-## 安装
+### 安装
 
-### 方式一：让 Codex 帮你安装
+#### 方式一：让 Codex 帮你安装
 
-1. 解压 ZIP，得到完整的 `personal-course-tutor` 文件夹。
+1. 下载或克隆本仓库；如下载 ZIP，先解压，并将技能文件夹命名为 `personal-course-tutor`。
 2. 在本地 Codex 聊天中引用该文件夹，或提供它在你电脑上的实际路径。
 3. 发送：
 
@@ -48,7 +251,7 @@
 
 4. 如系统要求授予技能目录的写入权限，按实际安装位置处理。
 
-### 方式二：手动放入技能目录
+#### 方式二：手动放入技能目录
 
 将整个 `personal-course-tutor` 文件夹复制到 Codex 能识别的技能目录。当前官方文档列出的用户级目录是 `$HOME/.agents/skills`；例如：
 
@@ -68,9 +271,9 @@ Windows 的用户主目录可对应为 `%USERPROFILE%`，文件位置例如：
 
 Codex 通常会自动发现技能；若新对话中仍找不到，重启后再检查。[官方技能目录与发现说明](https://learn.chatgpt.com/docs/build-skills)
 
-## 第一次使用
+### 第一次使用
 
-### 1. 建立课程项目并准备材料
+#### 1. 建立课程项目并准备材料
 
 为每门课程使用一个项目，把该课程资料放在项目可以读取的位置，方便后续每日聊天继续使用。
 
@@ -83,7 +286,7 @@ Codex 通常会自动发现技能；若新对话中仍找不到，重启后再�
 
 可以命名资料文件夹为 `Sources`，也可以沿用已有名称；不要求所有材料一次齐备。尽量使用清晰的章节或文件名。
 
-### 2. 明确采用完整流程
+#### 2. 明确采用完整流程
 
 在课程项目的新聊天中引用材料，并发送下面这段话：
 
@@ -93,7 +296,7 @@ Codex 通常会自动发现技能；若新对话中仍找不到，重启后再�
 
 初始化后，按导师提示提供剩余资料即可，不必每天重复整段要求。
 
-### 3. 确认计划
+#### 3. 确认计划
 
 查看每天的任务、课件范围、题量和时间安排是否合适。
 
@@ -102,7 +305,7 @@ Codex 通常会自动发现技能；若新对话中仍找不到，重启后再�
 
 导师会先保存确认后的计划，再创建或复用 Day1。**确认复习计划与确认开始上课，是两个不同环节。**
 
-### 4. 开始 Day1
+#### 4. 开始 Day1
 
 Day1 聊天会先说明当日目标与资料范围，询问是否开始。你回复“开始”后，再进行：
 
@@ -116,7 +319,7 @@ Day1 聊天会先说明当日目标与资料范围，询问是否开始。你回
 
 > 使用 `$personal-course-tutor`，读取本项目已确认的学习计划、每日任务和最新进度，准备 Day1。先介绍当天目标并询问我是否开始。
 
-### 5. 结束当天并交接
+#### 5. 结束当天并交接
 
 想停下时说：
 
@@ -146,7 +349,7 @@ Day1 聊天会先说明当日目标与资料范围，询问是否开始。你回
 
 Day 编号和日期分别记录，不会因为跨午夜或过了一天就自动认定上一天已经学完。
 
-## 计划和记录保存在哪里
+### 计划和记录保存在哪里
 
 每门课的资料、计划和学习进度放在自己的项目中，技能文件只保存方法。项目已有文件时，导师优先直接更新原有文件，保持名称与路径；没有时再按需要建立简明的结构。
 
@@ -164,12 +367,12 @@ Day 编号和日期分别记录，不会因为跨午夜或过了一天就自动�
 
 跨聊天衔接依靠这些最新文件。普通聊天中的附件未必能在另一个聊天直接读取，因此课件和试卷最好也放在同一项目的可读位置。
 
-## 分享包内容
+### 仓库内容
 
 ```text
 personal-course-tutor/
 ├── README.md                    本说明
-├── LICENSE.md                   许可、署名与AI辅助说明
+├── LICENSE.md                   许可与署名
 ├── SKILL.md                     技能入口与共用规则
 ├── agents/
 │   └── openai.yaml              名称、简介与默认启动提示
@@ -179,9 +382,9 @@ personal-course-tutor/
     └── session-flow.md         会话确认、创建与收尾交接
 ```
 
-该分享包只包含通用技能与说明，不包含分享者的课件、试卷、聊天记录、账户配置或学习进度。安装后使用你自己的课程资料即可。
+本仓库只包含通用技能与说明，不包含分享者的课件、试卷、聊天记录、账户配置或学习进度。安装后使用你自己的课程资料即可。
 
-## 许可
+### 许可
 
 本项目在 **Arlowkey** 有权授权的范围内，采用 **CC BY-NC-SA 4.0（署名—非商业性使用—相同方式共享 4.0 国际版）**。允许非商业使用、修改与分享；分享时须署名、标明修改，并按许可要求共享改编内容。商业使用需另行取得授权。
 
