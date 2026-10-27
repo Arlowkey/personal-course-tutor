@@ -1,4 +1,4 @@
-# Personal Course Tutor · 个人课程导师
+# Personal Course Tutor · 我的学术导师
 
 [English](#english) | [简体中文](#chinese)
 
@@ -8,23 +8,33 @@
 
 ### Overview
 
-Turn your lecture slides, exam scope, and past papers into a revision plan, then study through daily tutoring sessions that adapt to your actual progress.
+Develop a revision plan from lecture slides, exam requirements, and past papers, then follow daily tutoring sessions that adapt to actual learning progress.
 
 **Works with any course. Use it in a regular Codex chat.**
 
-Skill name: `personal-course-tutor`
+Display name: **我的学术导师**  
+Skill ID: `personal-course-tutor`
 
 The tutor currently teaches primarily in Chinese and presents important terms as “Chinese (English).”
 
 ### What it does
 
-The complete workflow is:
+The complete workflow has five stages:
 
-**Provide Sources → “学习计划” (Study Plan) chat → Clarify missing information → Draft a plan → You confirm → Day1 chat → You confirm the start → Study → Confirm the actual stopping point → Adjust the remaining plan → Save personal study notes.**
+| Stage | What happens |
+|---|---|
+| 1. Materials and goals | Collect course materials and clarify the exam date, study time, current knowledge, and goals. |
+| 2. Planning and approval | Draft a revision plan in the “学习计划” (Study Plan) chat; save it after the learner reviews and approves it. |
+| 3. Daily study | Prepare a `DayX` chat, introduce the session goals, and wait for explicit start confirmation before teaching in the slides’ natural order. |
+| 4. Progress review | Verify the actual stopping point, exercise status, and unfinished work; adjust the remaining plan accordingly. |
+| 5. Notes and continuity | Save personal study notes and identify the next starting point for a later session. |
+
+**Plan approval and session start confirmation are separate steps.** Preparing a `DayX` chat does not start teaching automatically. Day numbers identify study units rather than calendar dates.
 
 - **Build a revision plan:** Review slides, exam requirements, and past papers; account for your exam date, daily availability, current knowledge, and goals. Ask about missing essentials, such as daily study time, before finalizing the plan.
 - **Build the big picture first:** Explain the main themes, divide the material into modules, and show how the modules connect.
 - **Teach in slide order:** Work through pages or natural modules in manageable batches, explain important figures, and discuss the problems a concept solves. Add examples, analogies, and limits where useful.
+- **Explain visually when useful:** Use diagrams, comparison tables, timelines, charts, or interactive controls to clarify relationships and explore changes. Prefer supported components within the chat; use static alternatives when interaction is unavailable. Keep simple questions concise and prioritize accuracy over presentation.
 - **Explain in Chinese with English terminology:** Introduce key concepts in “Chinese (English)” format and adjust the depth to your background.
 - **Support practice and questions:** Usually give you a chance to attempt a problem before offering feedback and hints. Provide a complete explanation when you explicitly request one.
 - **Keep progress accurate:** At the end of a session, confirm the page or concept actually reached, exercise status, and unfinished work, then update the existing plan and records.
@@ -38,6 +48,7 @@ This is an instruction-based Codex skill containing workflow rules and reference
 |---|---|
 | Read the skill, plan revision, and tutor | A Codex environment that supports local skills |
 | Read slides, scanned papers, figures, and formulas | Suitable file-reading tools; PDF and presentation tools as needed |
+| Show charts and interactive explanations | Suitable rendering tools or native chat components; static diagrams, tables, or worked examples are used when needed |
 | Save plans, notes, and progress | Read/write access to the course project |
 | Rename, create, and open DayX chats automatically | Available Codex chat-management tools and your authorization to use the full workflow |
 
@@ -73,9 +84,17 @@ On Windows, the user home directory can be represented by `%USERPROFILE%`:
 
 If your environment already discovers skills in `$CODEX_HOME/skills`, commonly `~/.codex/skills`, use the location recognized by that environment. Install in one location to avoid duplicate skill names.
 
-Keep `SKILL.md` directly inside `personal-course-tutor`, alongside `agents` and `references`. Avoid an extra nested folder with the same name.
+Keep the complete directory: `SKILL.md`, `agents`, and `references` must remain together. Copying only `SKILL.md` is not sufficient. Avoid an extra nested folder with the same name.
 
 Codex normally detects skill changes automatically; restart it if the skill does not appear. See the [official skill discovery documentation](https://learn.chatgpt.com/docs/build-skills).
+
+### Invocation and scope
+
+This skill requires explicit invocation. Include `$personal-course-tutor` in the message, or explicitly request “我的学术导师.” If the environment provides a skill selector, select the skill by its display name. Uploading slides or asking a course question alone does not activate it.
+
+State the intended task in the same message. The complete workflow below includes planning and daily chats; a focused request can go directly to tutoring, for example:
+
+> Use $personal-course-tutor to explain the slides in order, with diagrams or interactive examples where useful. Do not create a revision plan or a separate chat.
 
 ### First use
 
@@ -96,13 +115,13 @@ You may call the materials folder `Sources` or keep its existing name. You do no
 
 In a new chat in the course project, reference the materials and send:
 
-> Use the complete $personal-course-tutor workflow. Rename this chat to “学习计划” (Study Plan). Create a revision plan from my course materials, and ask me first if essentials such as daily study time are missing. After I confirm the plan, create and open a “Day1” chat in the same project. Ask whether I am ready to start, and wait for my confirmation before teaching. When I end the session, confirm my actual stopping point and exercise status, then adjust the remaining plan.
+> Use the complete $personal-course-tutor workflow. Rename this chat to “学习计划” (Study Plan). Create a revision plan from my course materials, and ask about any missing essentials, such as daily study time. After I approve the plan, save it, then create and open a “Day1” chat in the same project. Introduce the session goals and wait for my confirmation to begin teaching. At the end of the session, verify my actual stopping point and exercise status, adjust the remaining plan, and save my personal study notes.
 
 If known, include your exam date, daily availability, unavailable dates, current progress, and goals. The tutor asks about missing essentials.
 
-After setup, follow the tutor’s prompts. You do not need to repeat the full request every day.
+Once the workflow is adopted, later sessions continue from the approved plan and current records. The full request does not need to be repeated each day.
 
-#### 3. Confirm the plan
+#### 3. Review and approve the plan
 
 Review the daily workload, slide ranges, exercises, and time estimates.
 
@@ -117,7 +136,7 @@ The Day1 chat first introduces the day’s goals and materials and asks whether 
 
 1. An overview of the day’s knowledge and how it fits together.
 2. Page-by-page or module-by-module teaching in the slides’ natural order.
-3. Relevant examples, important figures, and practice feedback.
+3. Visual explanations, relevant examples, and practice feedback.
 
 Ask the tutor to slow down, break down a step, or use a different example whenever needed. You can also ask to skip material you already understand.
 
@@ -184,7 +203,7 @@ personal-course-tutor/
 │   └── openai.yaml              Display name, description, and default prompt
 └── references/
     ├── planning.md             Revision planning
-    ├── teaching.md             Daily tutoring and study notes
+    ├── teaching.md             Tutoring, visualization, and study notes
     └── session-flow.md         Chat confirmations, creation, and handoff
 ```
 
@@ -206,38 +225,49 @@ Created by Arlowkey. Portions of the content were written with assistance from A
 
 ## 简体中文
 
-把课件、考试范围和历年试卷交给 Codex，让它先帮你制定复习计划，再按照每天的任务辅导学习，并根据真实进度调整之后的安排。
+基于课件、考试范围与历年试卷制定复习计划，按每日任务开展学习辅导，并依据实际学习进度持续调整后续安排。
 
 **适用于任意课程。普通对话模式即可使用。**
 
-技能名称：`personal-course-tutor`  
+显示名称：**我的学术导师**  
+技能标识：`personal-course-tutor`
 
-### 能做什么
+### 核心功能与学习流程
 
-完整流程是：
+完整流程分为五个阶段：
 
-**上传 Sources → “学习计划”聊天 → 补充必要信息 → 制定计划 → 你确认 → “Day1”聊天 → 你确认开始 → 学习 → 确认实际停点 → 调整后续计划 → 整理个人学习笔记。**
+| 阶段 | 主要内容 |
+|---|---|
+| 1. 资料与目标梳理 | 汇总课程资料，明确考试日期、每日可用时间、当前基础与学习目标。 |
+| 2. 计划制定与确认 | 在“学习计划”聊天中拟定复习安排，经学习者审核并确认后保存。 |
+| 3. DayX 分日学习 | 准备每日学习聊天，说明当日目标与资料范围；收到开始确认后，按课件自然顺序授课。 |
+| 4. 进度复盘与调整 | 核对实际学习位置、练习状态及未完成内容，据此调整后续计划。 |
+| 5. 笔记整理与续学 | 保存个人学习笔记，明确下次起点，为后续学习保留交接记录。 |
+
+**计划确认与授课开始确认是两个独立环节。** 准备 `DayX` 聊天后，仍需确认开始当日学习；Day 编号表示学习单元，与日历日期分别记录。
 
 - **制定复习计划**：分析课件、考试范围、试卷等，结合考试日期、每日可用时间、当前基础和学习目标，安排每天的材料、任务与验收方式。每日时长等关键条件没说明时会先询问。
 - **先建立知识框架**：讲清当天内容的核心主题、模块划分，以及模块之间的逻辑关系。
 - **按课件顺序讲解**：结合原页与重要图片，按自然模块分批讲；解释知识解决什么问题，并按需要补充类比、应用和适用边界。
-- **中文讲解，提示英文术语**：关键概念使用“中文（English）”格式；根据你的基础调整深度。
-- **练习与答疑**：通常先留你尝试，再给反馈和提示。你明确要求完整解答时，也可以直接讲解。
+- **可视化与交互教学**：当关系、对比、过程或参数变化适合直观呈现时，主动使用图表、示意图、对比表、时间线或交互控件。优先采用聊天内可用组件，不支持交互时使用静态替代；简单问题保持简洁，准确性优先，不为展示额外生成文件。
+- **中文讲解，提示英文术语**：关键概念使用“中文（English）”格式，根据当前基础调整讲解深度。
+- **练习与答疑**：通常先安排独立尝试，再提供针对性反馈和提示；明确要求完整解答时，可直接展开讲解。
 - **持续衔接进度**：收尾时核对实际学到的页码或知识点、练习情况和未完成项，再更新原有计划与记录。
-- **整理我的学习笔记**：收尾后自动以第一人称整理学习目标、当前理解、少量核心概念、卡点与易错提醒，以及下次学习起点。关键公式按需列出，内容简洁。
+- **整理个人学习笔记**：收尾后自动以第一人称整理学习目标、当前理解、少量核心概念、理解难点与易错提醒，以及下次学习起点。关键公式按需列出，内容简洁。
 
 ### 使用环境
 
-这是一个供 Codex 读取的指令型 skill，文件夹中包含技能规则和参考流程，没有安装脚本或可执行程序。
+本技能由 Codex 读取的规则和参考流程组成，不包含安装脚本或可执行程序。
 
 | 功能 | 所需能力 |
 |---|---|
 | 读取 skill、规划复习与授课 | 支持本地 skills 的 Codex 环境 |
 | 读取课件、扫描卷、图表和公式 | 环境具备对应文件的读取能力；PDF、演示文稿等工具按需使用 |
+| 展示图表与交互式讲解 | 环境具备相应渲染工具或聊天原生组件；能力不足时采用静态图、表格或算例 |
 | 保存计划、笔记与进度 | 能读写该课程项目的文件 |
-| 自动命名、创建并打开 DayX 聊天 | 环境提供对应的 Codex 聊天管理工具，且你已授权采用完整流程 |
+| 自动命名、创建并打开 DayX 聊天 | 环境提供对应的 Codex 聊天管理工具，且学习者已授权采用完整流程 |
 
-如果聊天管理工具不可用，导师会说明需要你手动创建或打开 `Day1`。规划、教学和记录仍可继续使用；没有文件写入能力时，会在聊天中提供可复用的交接记录。
+聊天管理工具不可用时，可手动创建或打开 `Day1`，继续使用规划、教学与记录功能；没有文件写入能力时，导师会在聊天中提供可复用的交接记录。
 
 “Day1 聊天”指同一课程项目内的新聊天，不承诺自动打开单独的系统窗口。
 
@@ -269,9 +299,17 @@ Windows 的用户主目录可对应为 `%USERPROFILE%`，文件位置例如：
 
 如果你的 Codex 环境已经使用 `$CODEX_HOME/skills`（常见为 `~/.codex/skills`）发现用户技能，也可以使用该环境实际识别的位置。选择一处安装即可，避免出现两个同名技能。
 
-检查目录层级：`SKILL.md` 应直接位于 `personal-course-tutor` 文件夹内，不要解压成重复嵌套的两层同名文件夹。`references` 和 `agents` 也要一起保留。
+安装时保留完整目录：`SKILL.md`、`agents` 与 `references` 必须一同复制，不能只安装 `SKILL.md`。`SKILL.md` 应直接位于 `personal-course-tutor` 文件夹内，避免解压成两层同名目录。
 
 Codex 通常会自动发现技能；若新对话中仍找不到，重启后再检查。[官方技能目录与发现说明](https://learn.chatgpt.com/docs/build-skills)
+
+### 调用方式与使用范围
+
+本技能仅在明确调用时启用。可在消息中引用 `$personal-course-tutor`，或明确提出使用“我的学术导师”；支持技能选择器的环境中，也可按显示名称选择。仅上传课件或提出课程问题，不会自动启用本技能。
+
+调用时说明本次任务即可。完整流程包含复习规划与每日聊天；只需讲解或答疑时，可以直接指定范围，例如：
+
+> 使用 `$personal-course-tutor`，按课件顺序讲解，适合时配合图示或交互示例；本次不制定复习计划，也不另建聊天。
 
 ### 第一次使用
 
@@ -288,17 +326,17 @@ Codex 通常会自动发现技能；若新对话中仍找不到，重启后再�
 
 可以命名资料文件夹为 `Sources`，也可以沿用已有名称；不要求所有材料一次齐备。尽量使用清晰的章节或文件名。
 
-#### 2. 明确采用完整流程
+#### 2. 启用完整学习流程
 
 在课程项目的新聊天中引用材料，并发送下面这段话：
 
-> 使用 `$personal-course-tutor` 的完整流程。请把本聊天命名为“学习计划”，根据我提供的课程资料制定复习计划，缺少每日学习时长等关键信息时先问我。我确认计划后，请在同一项目创建并打开“Day1”聊天，先询问我是否开始，等我确认后再授课。当天结束时，核对我的实际学习位置和练习情况，再调整后续计划。
+> 使用 `$personal-course-tutor` 的完整流程。请将本聊天命名为“学习计划”，根据课程资料制定复习计划，并询问尚未明确的每日学习时长等关键条件。计划经我审核确认后，先保存，再在同一项目创建并打开“Day1”聊天。介绍当日目标，收到我的开始确认后再授课。当天结束时，核对实际学习位置与练习状态，调整后续计划，并保存个人学习笔记。
 
 如已知道，也可以一并说明考试日期、每天可用时间、不能学习的日期、当前进度及目标。没有给出的关键条件，导师会再询问。
 
-初始化后，按导师提示提供剩余资料即可，不必每天重复整段要求。
+采用完整流程后，后续学习将依据已确认计划和最新记录继续，无需每天重复整段启动指令。
 
-#### 3. 确认计划
+#### 3. 审核并确认计划
 
 查看每天的任务、课件范围、题量和时间安排是否合适。
 
@@ -309,13 +347,13 @@ Codex 通常会自动发现技能；若新对话中仍找不到，重启后再�
 
 #### 4. 开始 Day1
 
-Day1 聊天会先说明当日目标与资料范围，询问是否开始。你回复“开始”后，再进行：
+Day1 聊天先说明当日目标与资料范围。明确回复“开始”后，进入以下学习环节：
 
 1. 当天知识的整体框架。
 2. 按课件自然顺序逐页或逐模块讲解。
-3. 必要的例子、重要图片说明和练习反馈。
+3. 配合图示的概念讲解、必要算例与练习反馈。
 
-看不懂时可以随时要求放慢、拆开某一步或换一个例子；已会的部分也可以说明略过。
+遇到理解困难时，可要求放慢进度、拆解步骤或更换例子；已经掌握的内容可按需略过。
 
 如果需要手动创建 Day1，在同一项目中新建聊天、命名为 `Day1`，然后发送：
 
@@ -323,17 +361,17 @@ Day1 聊天会先说明当日目标与资料范围，询问是否开始。你回
 
 #### 5. 结束当天并交接
 
-想停下时说：
+结束当日学习时，可发送：
 
 > Day1 学习到此为止。
 
 导师会停止新增内容，补问尚未明确的实际停点和练习状态。可以用页码或知识点描述；一页只学了一半也可以如实说明。
 
-例如，下面只是表达方式示例，请替换成自己的真实情况：
+以下为进度描述示例，使用时请替换为实际情况：
 
 > 实际学到 Chapter2.pdf 第 12 页，例题还没独立写完。第 2 道练习做过，但需要提示；后面的内容先留到下次。
 
-随后导师会记录真实进度、调整之后的任务，并说明下次从哪里开始。当天停止学习不会自动记为当天任务全部完成，也不会把看过答案记为独立通过。
+导师随后记录实际进度、调整后续任务，并标明下次学习起点。结束当日学习不等于完成当日全部任务，阅读答案也不计为独立完成练习。
 
 接着会自动整理并保存“DayX｜我的学习笔记”，包含五个部分：
 
@@ -343,7 +381,7 @@ Day1 聊天会先说明当日目标与资料范围，询问是否开始。你回
 4. **我的卡点与易错提醒**：实际疑问、误解、有效的解释与尚未解决的问题。
 5. **下次学习起点**：具体课件页码或知识点，以及优先重做的练习。
 
-笔记依据你的真实回答与作答整理，已有相应笔记时更新原文件；没有时再新建。若实际停点还未确认，会先等待补充；只能在聊天交付时，会说明尚未保存到文件。
+笔记依据实际回答与作答记录整理；已有当日笔记时更新原文件，没有时再新建。实际停点尚未确认时，先补充或核实进度；只能在聊天交付时，会明确说明尚未保存为文件。
 
 下次可以说：
 
@@ -380,7 +418,7 @@ personal-course-tutor/
 │   └── openai.yaml              名称、简介与默认启动提示
 └── references/
     ├── planning.md             复习规划
-    ├── teaching.md             每日授课
+    ├── teaching.md             每日授课、可视化与学习笔记
     └── session-flow.md         会话确认、创建与收尾交接
 ```
 
