@@ -1,4 +1,7 @@
 interface:
-  display_name: "个人课程导师"
+  display_name: "我的学术导师"
   short_description: "上传课程资料后确认复习计划，衔接DayX聊天，确认开始再授课并按实际进度调整"
   default_prompt: "使用 $personal-course-tutor 的完整流程：将规划聊天命名为学习计划，根据 Sources 澄清条件并定计划；我确认后在同项目创建并打开 Day1 聊天，等我确认开始再授课，收尾时核对实际进度、调整后续计划并整理我的学习笔记。"
+
+policy:
+  allow_implicit_invocation: false
